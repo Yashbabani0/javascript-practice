@@ -8,11 +8,13 @@ let counter = 0;
 incrementButton.addEventListener("click", () => {
   counter++;
   counterElement.textContent = counter;
+  localStorage.setItem("counterValue", counter);
 });
 window.addEventListener("keydown", (event) => {
   if (event.key === "+") {
     counter++;
     counterElement.textContent = counter;
+    localStorage.setItem("counterValue", counter);
   }
 });
 
@@ -22,6 +24,7 @@ decrementButton.addEventListener("click", () => {
   }
   counter--;
   counterElement.textContent = counter;
+  localStorage.setItem("counterValue", counter);
 });
 window.addEventListener("keydown", (event) => {
   if (event.key === "-") {
@@ -30,16 +33,19 @@ window.addEventListener("keydown", (event) => {
     }
     counter--;
     counterElement.textContent = counter;
+    localStorage.setItem("counterValue", counter);
   }
 });
 
 resetButton.addEventListener("click", () => {
   counter = 0;
   counterElement.textContent = counter;
+  localStorage.setItem("counterValue", counter);
 });
 window.addEventListener("keydown", (event) => {
   if (event.key.toLowerCase() === "r") {
     counter = 0;
     counterElement.textContent = counter;
+    localStorage.setItem("counterValue", counter);
   }
 });
